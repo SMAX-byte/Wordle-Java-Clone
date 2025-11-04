@@ -119,4 +119,17 @@ public class Main {
     publis static boolean didWin(char[] arrayTypedWord, char[] arrayRandomWord) {
         return Arrays.equals(arrayTypedWord, arrayRandomWord);
     }
+     /* write a hint function that when the user asks, the game returns the number 
+     of repeated characters in the answer*/
+     public static int countRepeatedChars(char[] arrayRandomWord) {
+        Set<Character> charSet = new HashSet<>();
+        Set<Character> repeatedChars = new HashSet<>();
+
+        for (char c : arrayRandomWord) {
+            if (!charSet.add(c)) {
+                repeatedChars.add(c);
+            }
+        }
+
+        return repeatedChars.size();
 }
