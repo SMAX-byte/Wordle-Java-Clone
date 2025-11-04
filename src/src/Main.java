@@ -42,7 +42,7 @@ public class Main {
                 char[] arrayTypedWord = typedWord.toCharArray();
 
                 System.out.print(tries + ". guess: ");
-                if (Arrays.equals(arrayTypedWord, arrayRandomWord)){
+                if (didWin(arrayTypedWord, arrayRandomWord)) {
                     for (int i=0; i<5; i++){
                         System.out.print(ANSI_GREEN_BACKGROUND + " " + arrayTypedWord[i] + " " + ANSI_RESET);
                     }
@@ -97,7 +97,7 @@ public class Main {
                     System.out.println();
                 }
 
-                if (tries == 6 && !Arrays.equals(arrayTypedWord, arrayRandomWord)) {
+                if (tries == 6 && didWin(arrayTypedWord, arrayRandomWord) == false){
                     System.out.println("\nLooks like you didn't win this time.");
                 }
                 tries++;
@@ -114,5 +114,9 @@ public class Main {
         }
 
         System.out.println("Invalid input. Exiting program!");
+    }
+
+    publis static boolean didWin(char[] arrayTypedWord, char[] arrayRandomWord) {
+        return Arrays.equals(arrayTypedWord, arrayRandomWord);
     }
 }
