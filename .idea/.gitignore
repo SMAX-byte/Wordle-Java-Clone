@@ -6,3 +6,6 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+
+# JetBrains IDEs specific files
+/.idea/**/workspace.xml
